@@ -12,5 +12,5 @@ CREATE TABLE HELLO_WORLD
 
 ALTER TABLE hello_world ADD COLUMN PhoneNumber NUMBER;
 
-ALTER TABLE hello_world ADD COLUMN address varchar(100);
+ALTER TABLE hello_world ADD COLUMN Pincode NUMBER;
 
