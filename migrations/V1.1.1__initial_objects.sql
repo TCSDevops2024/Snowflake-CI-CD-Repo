@@ -11,3 +11,7 @@ CREATE TABLE HELLO_WORLD
 );
 
 ALTER TABLE hello_world ADD COLUMN PhoneNumber NUMBER;
+
+
+alter table HELLO_WORLD
+add address varchar(100)
