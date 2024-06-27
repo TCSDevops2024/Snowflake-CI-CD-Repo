@@ -46,6 +46,8 @@ jobs:
           SF_DATABASE: ${{ secrets.SF_DATABASE }}
 
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          
+          SNOWFLAKE_SCHEMA: ${{ secrets.SF_SCHEMA }}  
 
       run: |
 
@@ -58,6 +60,6 @@ jobs:
           pip install schemachange
 
           echo "Step 2: Running schemachange 
-          schemachange -f $GITHUB_WORKSPACE/migrations -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-tablechange"
+          schemachange -f $GITHUB_WORKSPACE/migrations -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c MY_CUSTOM_CHANGE_HISTORY_TABLE \ --change-history-schema $SF_SCHEMA \ --create-change-history-table
 
           
